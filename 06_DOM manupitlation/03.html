@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color: black; color :rgb(194, 175, 150);">
+    <ul class = "language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(lang) {
+        const li = document.createElement('li')
+        li.innerText = `${lang}`
+
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("Python")
+    addLanguage("C++")
+
+    function addOptLanguage(lang) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptLanguage("TypeScript")
+
+    // Edit
+
+    const secongLang = document.querySelector('li:nth-child(2)')
+    console.log(secongLang);
+    
+    // secongLang.innerHTML = "Turbo JS"
+    const li = document.createElement('li')
+    li.textContent = "Turbo JS"
+
+    secongLang.replaceWith(li)
+    const replacedLang = document.querySelector('li:nth-child(2)')
+    console.log(replacedLang);
+
+    // Edit
+
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.innerHTML = 'TypeScript'
+
+    // remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>
