@@ -69,7 +69,7 @@ function endGame(){
     userInput.value = ''
     userInput.setAttribute('disabled', '')
     p.classList.add('button')
-    p.innerHTML = `<h2 id = 'newGame'>Start Over</h2>`
+    p.innerHTML = `<button id = 'newGame'>Start Over</button>`
     startOver.appendChild(p)
     playGame = false
     newGame()
