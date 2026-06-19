@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body style="background-color: #212121;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    // --------------------LEXICAL SCOPING----------------------
+
+    // function init() {
+    //     let name = "Mozilla"; 
+
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     let username = 'krish'
+    //     console.log(secret);
+        
+    //     function inner(){
+    //         let secret = 'my52'
+    //         console.log('inner:',username);
+    //     }
+    //     function innerTwo(){
+    //         console.log('inner:',username);
+    //         console.log(secret);
+            
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+    // outer()
+    // console.log('outerf:',username);
+
+    // ------------------------CLOSURE-----------------------------
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myFunc = makeFunc();
+    // myFunc();
+
+    // Jab Function return krte ho , to sirf function return nh hota, Pura scope bhi return hota hai
+
+</script>
+<script>
+    //------------------------USE CASE------------------------ 
+
+    // document.getElementById('orange').onclick = () =>{
+    //     document.body.style.backgroundColor = 'orange'
+    // }
+    // document.getElementById('green').onclick = () =>{
+    //     document.body.style.backgroundColor = 'green'
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function (){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+
+</script>
+
+</html>
